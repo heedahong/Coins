@@ -7,7 +7,7 @@
 
 import UIKit
 import SafariServices
-import Charts
+import DGCharts
 
 final class CoinDetailViewController: UIViewController {
     
@@ -50,14 +50,13 @@ final class CoinDetailViewController: UIViewController {
             let gradientColor = [startColor.cgColor, endColor.cgColor] as CFArray
             let colorLocations: [CGFloat] = [1.0, 0.0]
             let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColor, locations: colorLocations)
-            dataSet.fill = Fill.fillWithRadialGradient(gradient!)
+            dataSet.fill = RadialGradientFill(gradient: gradient!)
             dataSet.drawFilledEnabled = true
             
             let data = LineChartData(dataSet: dataSet)
             self.chartView.data = data
             self.chartView.highlightValue(x: latest!, dataSetIndex: 0)
             self.chartView.xAxis.valueFormatter = DateAxisValueFormatter(duration: duration)
-            self.chartView.highlightValue(x: latestPrice!, dataSetIndex: 0)
         }
         viewModel.didSelectChartValue = { [weak self] price in
             guard let self = self else { return }

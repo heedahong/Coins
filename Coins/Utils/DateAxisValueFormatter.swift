@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Charts
+import DGCharts
 
-final class DateAxisValueFormatter: NSObject, IAxisValueFormatter {
+final class DateAxisValueFormatter: NSObject, AxisValueFormatter {
 
     let duration: Duration
 
