@@ -17,6 +17,8 @@ final class DateAxisValueFormatter: NSObject, AxisValueFormatter {
         super.init()
     }
 
+    deinit {}
+
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = duration.dateFormat
