@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="amf-hq-xXz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="amf-hq-xXz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,11 +26,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-sH-2Gj">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="202" width="414" height="626"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinCell" rowHeight="80" id="3rF-GJ-6gr" customClass="CoinCell" customModule="Coins" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="32" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="38" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3rF-GJ-6gr" id="FP3-Wi-iFf">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R8t-5y-VfS">
-                                <rect key="frame" x="16" y="104" width="382" height="742"/>
+                                <rect key="frame" x="16" y="166" width="382" height="646"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rw3-58-Ejj">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="58"/>
@@ -137,7 +137,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="Charts">
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fW-w2x" customClass="LineChartView" customModule="DGCharts">
                                         <rect key="frame" x="0.0" y="66" width="382" height="200"/>
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                         <constraints>
@@ -157,18 +157,18 @@
                                         </connections>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="m66-wu-B0e">
-                                        <rect key="frame" x="0.0" y="313" width="382" height="429"/>
+                                        <rect key="frame" x="0.0" y="313" width="382" height="333"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="109" id="iVs-9C-rjs" customClass="ArticleCell" customModule="Coins" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="382" height="109"/>
+                                                <rect key="frame" x="0.0" y="50" width="382" height="109"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iVs-9C-rjs" id="P6z-gT-1aG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="352.5" height="109"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="351.5" height="109"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QaC-LW-DXB">
-                                                            <rect key="frame" x="16" y="16" width="320.5" height="77"/>
+                                                            <rect key="frame" x="16" y="16" width="319.5" height="77"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="nLl-84-gBc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -178,10 +178,10 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h1l-M1-yPp">
-                                                                    <rect key="frame" x="68" y="0.0" width="252.5" height="77"/>
+                                                                    <rect key="frame" x="68" y="0.0" width="251.5" height="77"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foE-Tx-LYK">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="252.5" height="57"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="251.5" height="57"/>
                                                                             <string key="text">Platea adipiscing nam tempor ullamcorper velit bibendum amet nibh scelerisque.
 </string>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -189,7 +189,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="16h ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBp-tZ-1fm">
-                                                                            <rect key="frame" x="0.0" y="65" width="252.5" height="12"/>
+                                                                            <rect key="frame" x="0.0" y="65" width="251.5" height="12"/>
                                                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                     <tabBarItem key="tabBarItem" title="Coins" image="chart.bar.xaxis" catalog="system" id="NQi-NG-6Ec"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="JeE-Uh-tyV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="96" width="414" height="106"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -267,18 +267,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
+        <image name="chart.bar.xaxis" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
