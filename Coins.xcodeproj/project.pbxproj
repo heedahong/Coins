@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D8736D82F4EE5300054BBE6 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5D8736D72F4EE5300054BBE6 /* DGCharts */; };
 		5DBF02122741FA9B00FE6C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF02112741FA9B00FE6C1D /* AppDelegate.swift */; };
 		5DBF02142741FA9B00FE6C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF02132741FA9B00FE6C1D /* SceneDelegate.swift */; };
 		5DBF02192741FA9B00FE6C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF02172741FA9B00FE6C1D /* Main.storyboard */; };
@@ -34,7 +35,6 @@
 		5DD466AA2745C75800D1B730 /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466902745C73E00D1B730 /* GraphikRegular.otf */; };
 		5DD466AD2745C91F00D1B730 /* GraphikMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AB2745C91F00D1B730 /* GraphikMediumItalic.otf */; };
 		5DD466AE2745C91F00D1B730 /* GraphikMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD466AC2745C91F00D1B730 /* GraphikMedium.otf */; };
-		5DD466B4274660A400D1B730 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD466B3274660A400D1B730 /* Charts */; };
 		5DD466BC27466C2D00D1B730 /* CoinRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466BB27466C2D00D1B730 /* CoinRequestTests.swift */; };
 		5DD466C32746708700D1B730 /* MockJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466C22746708700D1B730 /* MockJSON.swift */; };
 		5DD466C527467E1E00D1B730 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD466C427467E1E00D1B730 /* CurrencyFormatter.swift */; };
@@ -110,8 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8736D82F4EE5300054BBE6 /* DGCharts in Frameworks */,
 				5DF2770A27439402003C434B /* Kingfisher in Frameworks */,
-				5DD466B4274660A400D1B730 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +343,7 @@
 			name = Coins;
 			packageProductDependencies = (
 				5DF2770927439402003C434B /* Kingfisher */,
-				5DD466B3274660A400D1B730 /* Charts */,
+				5D8736D72F4EE5300054BBE6 /* DGCharts */,
 			);
 			productName = Coins;
 			productReference = 5DBF020E2741FA9B00FE6C1D /* Coins.app */;
@@ -375,7 +375,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					5DBF020D2741FA9B00FE6C1D = {
 						CreatedOnToolsVersion = 13.0;
@@ -397,7 +397,7 @@
 			mainGroup = 5DBF02052741FA9B00FE6C1D;
 			packageReferences = (
 				5DF2770827439402003C434B /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				5DD466B2274660A400D1B730 /* XCRemoteSwiftPackageReference "Charts" */,
+				5D8736D62F4EE52B0054BBE6 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 5DBF020F2741FA9B00FE6C1D /* Products */;
 			projectDirPath = "";
@@ -547,6 +547,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -561,11 +562,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -608,6 +610,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -616,10 +619,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -633,7 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 325UV7FT5F;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Coins/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -641,6 +645,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,7 +666,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 325UV7FT5F;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Coins/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -669,6 +674,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -761,12 +767,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5DD466B2274660A400D1B730 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		5D8736D62F4EE52B0054BBE6 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
 				kind = exactVersion;
-				version = 3.6.0;
+				version = 5.1.0;
 			};
 		};
 		5DF2770827439402003C434B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -780,10 +786,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5DD466B3274660A400D1B730 /* Charts */ = {
+		5D8736D72F4EE5300054BBE6 /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5DD466B2274660A400D1B730 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
+			package = 5D8736D62F4EE52B0054BBE6 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 		5DF2770927439402003C434B /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
