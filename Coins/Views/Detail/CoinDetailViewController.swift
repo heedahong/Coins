@@ -64,9 +64,7 @@ final class CoinDetailViewController: UIViewController {
         }
         viewModel.didReceiveArticles = { [weak self] in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
         }
     }
 

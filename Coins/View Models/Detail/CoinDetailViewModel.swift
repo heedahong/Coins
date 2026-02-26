@@ -10,9 +10,9 @@ import Foundation
 @MainActor
 final class CoinDetailViewModel {
     
-    var didReceiveHistoricalCoin: (([(time: TimeInterval, price: Double)], Int) -> Void)?
-    var didReceiveArticles: (() -> Void)?
-    var didSelectChartValue: ((String?) -> Void)?
+    var didReceiveHistoricalCoin: (@MainActor ([(time: TimeInterval, price: Double)], Int) -> Void)?
+    var didReceiveArticles: (@MainActor () -> Void)?
+    var didSelectChartValue: (@MainActor (String?) -> Void)?
 
     private let coin: Coin
     private let service: CoinServiceAPI
