@@ -9,7 +9,7 @@ import Foundation
 
 struct CurrencyFormatter {
 
-    private static var currecyFormatter: NumberFormatter = {
+    nonisolated(unsafe) private static let currecyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "en_US")

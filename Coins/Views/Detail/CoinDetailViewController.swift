@@ -7,7 +7,7 @@
 
 import UIKit
 import SafariServices
-import DGCharts
+@preconcurrency import DGCharts
 
 final class CoinDetailViewController: UIViewController {
     
@@ -124,7 +124,7 @@ final class CoinDetailViewController: UIViewController {
 
 // MARK: - ChartViewDelegate
 
-extension CoinDetailViewController: ChartViewDelegate {
+extension CoinDetailViewController: @preconcurrency ChartViewDelegate {
 
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         viewModel.selectChartValue(entry.y)
