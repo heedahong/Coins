@@ -6,12 +6,25 @@
 //
 
 import Foundation
+import Testing
 
-import XCTest
+class MockURLProtocol: URLProtocol, @unchecked Sendable {
 
-class MockURLProtocol: URLProtocol {
+    private static let lock = NSLock()
+    private nonisolated(unsafe) static var _requestHandler: (@Sendable (URLRequest) throws -> (HTTPURLResponse, Data))?
 
-    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data))?
+    static var requestHandler: (@Sendable (URLRequest) throws -> (HTTPURLResponse, Data))? {
+        get {
+            lock.lock()
+            defer { lock.unlock() }
+            return _requestHandler
+        }
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _requestHandler = newValue
+        }
+    }
 
     override class func canInit(with request: URLRequest) -> Bool {
         return true
@@ -23,7 +36,7 @@ class MockURLProtocol: URLProtocol {
 
     override func startLoading() {
         guard let handler = MockURLProtocol.requestHandler else {
-            XCTFail("Received unexpected request with no handler set")
+            Issue.record("Received unexpected request with no handler set")
             return
         }
         do {

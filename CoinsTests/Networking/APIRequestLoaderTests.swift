@@ -9,6 +9,7 @@ import Testing
 import Foundation
 @testable import Coins
 
+@Suite(.serialized)
 struct APIRequestLoaderTests {
 
     let loader: APIRequestLoader
