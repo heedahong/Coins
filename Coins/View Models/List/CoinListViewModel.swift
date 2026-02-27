@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class CoinListViewModel {
 
     private let service: CoinServiceAPI
@@ -23,11 +24,10 @@ final class CoinListViewModel {
         self.didReceiveCoins = didReceiveCoins
         self.service = service
         
-        service.coins { result in
-            switch result {
-            case .success(let value):
-                self.coins = value
-            case .failure:
+        Task {
+            do {
+                self.coins = try await service.coins()
+            } catch {
                 self.coins = []
             }
         }

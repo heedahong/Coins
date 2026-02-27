@@ -7,11 +7,12 @@
 
 import Foundation
 
+@MainActor
 final class CoinDetailViewModel {
     
-    var didReceiveHistoricalCoin: (([(time: TimeInterval, price: Double)], Int) -> Void)?
-    var didReceiveArticles: (() -> Void)?
-    var didSelectChartValue: ((String?) -> Void)?
+    var didReceiveHistoricalCoin: (@MainActor ([(time: TimeInterval, price: Double)], Int) -> Void)?
+    var didReceiveArticles: (@MainActor () -> Void)?
+    var didSelectChartValue: (@MainActor (String?) -> Void)?
 
     private let coin: Coin
     private let service: CoinServiceAPI
@@ -37,10 +38,8 @@ extension CoinDetailViewModel {
 
     
     func selectDuration(at index: Int)  {
-        DispatchQueue.global(qos: .userInitiated).async {
-            let duration: Duration = Duration(rawValue: index) ?? .day
-            self.fetchHistoricalCoins(duration: duration)
-        }
+        let duration: Duration = Duration(rawValue: index) ?? .day
+        self.fetchHistoricalCoins(duration: duration)
     }
     
     func selectChartValue(_ value: Double) {
@@ -48,27 +47,25 @@ extension CoinDetailViewModel {
     }
     
     func fetchHistoricalCoins(duration: Duration) {
-        service.historicalCoins(from: coin, duration: duration) { result in
-            switch result {
-            case .success(let value):
-                let duration = duration.rawValue
+        Task {
+            do {
+                let value = try await service.historicalCoins(from: coin, duration: duration)
+                let durationValue = duration.rawValue
                 let chartData = value.map { ($0.time, $0.price) }
-                DispatchQueue.main.async {
-                    self.didReceiveHistoricalCoin?(chartData, duration)
-                }
-            case .failure:
-                break
+                self.didReceiveHistoricalCoin?(chartData, durationValue)
+            } catch {
+                // handle error
             }
         }
     }
 
     func fetchArticles() {
-        service.articlesFor(coin){ result in
-            switch result {
-            case .success(let articles):
+        Task {
+            do {
+                let articles = try await service.articlesFor(coin)
                 self.articles = articles
-            case .failure(_):
-                break
+            } catch {
+                // handle error
             }
         }
     }

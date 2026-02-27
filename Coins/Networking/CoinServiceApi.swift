@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CoinServiceAPI {
+final class CoinServiceAPI: Sendable {
     
     private let apiRequestLoader: APIRequestLoader
 
@@ -15,40 +15,22 @@ final class CoinServiceAPI {
         self.apiRequestLoader = apiRequestLoader
     }
     
-    func coins(completion: @escaping (Result<[Coin], Error>) -> Void) {
+    func coins() async throws -> [Coin] {
         let endpoint = CoinRequest.coins(limit: 20, to: nil)
-        apiRequestLoader.request(with: endpoint) { result in
-            switch result {
-            case .success(let value):
-                completion(.success(value.coins))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+        let response = try await apiRequestLoader.request(with: endpoint)
+        return response.coins
     }
 
-    func historicalCoins(from: Coin, duration: Duration, completion: @escaping (Result<[HistoricalCoin], Error>) -> Void) {
+    func historicalCoins(from: Coin, duration: Duration) async throws -> [HistoricalCoin] {
         let endpoint = HistoricalCoinRequest.historicalCoin(from: from.name, to: nil, duration: duration)
-        apiRequestLoader.request(with: endpoint) { result in
-            switch result {
-            case .success(let value):
-                completion(.success(value.historicalCoins))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+        let response = try await apiRequestLoader.request(with: endpoint)
+        return response.historicalCoins
     }
 
-    func articlesFor(_ coin: Coin, completion: @escaping (Result<[Article], Error>) -> Void) {
+    func articlesFor(_ coin: Coin) async throws -> [Article] {
         let endpoint = ArticleRequest.articles(category: coin.name)
-        apiRequestLoader.request(with: endpoint) { result in
-            switch result {
-            case .success(let value):
-                completion(.success(value.articles))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+        let response = try await apiRequestLoader.request(with: endpoint)
+        return response.articles
     }
 
 }
